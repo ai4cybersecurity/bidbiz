@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="tr" data-lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bid Engineering için üç dilli mini kurumsal landing page. Teknik işler, ithalat, ihracat ve Amazon ticaretine odaklanan modern firma sayfası." />
+  <meta property="og:title" content="Bid Engineering" />
+  <meta property="og:description" content="Teknik işler, ithalat ve ihracat operasyonları ile Amazon ticareti odağında modern mini kurumsal sayfa." />
+  <meta property="og:type" content="website" />
+  <title>Bid Engineering Landing Page</title>
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=cabinet-grotesk@500,700,800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.8rem);
+      --text-hero: clamp(3rem, 1rem + 6vw, 6.5rem);
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+      --color-bg: #0a0f14;
+      --color-surface: #101820;
+      --color-surface-2: #14202a;
+      --color-surface-offset: #192633;
+      --color-border: rgba(212, 226, 240, 0.12);
+      --color-divider: rgba(212, 226, 240, 0.08);
+      --color-text: #edf3f8;
+      --color-text-muted: #9baec1;
+      --color-text-faint: #64768a;
+      --color-primary: #56c7b2;
+      --color-primary-hover: #3bb29c;
+      --color-primary-highlight: rgba(86, 199, 178, 0.14);
+      --color-secondary: #80a8ff;
+      --radius-sm: 0.375rem;
+      --radius-md: 0.75rem;
+      --radius-lg: 1rem;
+      --radius-xl: 1.5rem;
+      --radius-full: 9999px;
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+      --shadow-md: 0 18px 40px rgba(0, 0, 0, 0.25);
+      --shadow-lg: 0 32px 80px rgba(0, 0, 0, 0.35);
+      --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+      --content-default: 1180px;
+      --font-body: 'General Sans', system-ui, sans-serif;
+      --font-display: 'Cabinet Grotesk', 'General Sans', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100dvh;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.6;
+      color: var(--color-text);
+      background:
+        radial-gradient(circle at top left, rgba(86, 199, 178, 0.16), transparent 28%),
+        radial-gradient(circle at 85% 20%, rgba(128, 168, 255, 0.16), transparent 24%),
+        linear-gradient(180deg, #081017 0%, #0a0f14 38%, #0d141c 100%);
+    }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; border: none; background: none; color: inherit; cursor: pointer; }
+    :focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 4px;
+      border-radius: var(--radius-sm);
+    }
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: var(--color-primary);
+      color: #071015;
+      padding: var(--space-3) var(--space-4);
+      z-index: 1000;
+    }
+    .skip-link:focus { left: var(--space-4); top: var(--space-4); }
+    .container {
+      width: min(calc(100% - 2rem), var(--content-default));
+      margin-inline: auto;
+    }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      background: rgba(10, 15, 20, 0.76);
+      border-bottom: 1px solid transparent;
+      transition: border-color var(--transition-interactive), background var(--transition-interactive);
+    }
+    .site-header.scrolled {
+      border-color: var(--color-border);
+      background: rgba(10, 15, 20, 0.9);
+    }
+    .nav-shell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      min-height: 82px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: var(--color-text);
+      background: linear-gradient(135deg, rgba(86, 199, 178, 0.18), rgba(128, 168, 255, 0.2));
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+    .brand-wording small {
+      display: block;
+      color: var(--color-text-muted);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: var(--space-6);
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+    .nav-links a:hover { color: var(--color-text); }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+    }
+    .language-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+      padding: 0.3rem;
+      border-radius: var(--radius-full);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--color-border);
+    }
+    .lang-btn {
+      min-width: 44px;
+      min-height: 44px;
+      padding: 0 0.8rem;
+      border-radius: var(--radius-full);
+      color: var(--color-text-muted);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .lang-btn.is-active {
+      background: var(--color-primary);
+      color: #071015;
+    }
+    .nav-cta,
+    .contact-us-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 var(--space-5);
+      border-radius: var(--radius-full);
+      background: var(--color-primary);
+      color: #071015;
+      font-weight: 700;
+      transition: transform var(--transition-interactive), background var(--transition-interactive);
+    }
+    .nav-cta:hover,
+    .contact-us-btn:hover { background: var(--color-primary-hover); transform: translateY(-1px); }
+
+    main { overflow: clip; }
+    section { padding: clamp(var(--space-12), 8vw, var(--space-24)) 0; }
+    .hero {
+      padding: clamp(var(--space-16), 10vw, var(--space-24)) 0 var(--space-16);
+    }
+    .hero-grid {
+      display: grid;
+      gap: var(--space-10);
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: 0.5rem 0.85rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-full);
+      background: rgba(255,255,255,0.03);
+      color: var(--color-text-muted);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: var(--space-5);
+      width: fit-content;
+    }
+    .hero-copy h1 {
+      font-family: var(--font-display);
+      font-size: var(--text-hero);
+      line-height: 0.94;
+      max-width: 10ch;
+      letter-spacing: -0.045em;
+      margin-bottom: var(--space-6);
+    }
+    .hero-copy h1 span {
+      color: var(--color-primary);
+      display: block;
+    }
+    .hero-copy p {
+      max-width: 62ch;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-8);
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      margin-bottom: var(--space-8);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 var(--space-6);
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      transition: transform var(--transition-interactive), border-color var(--transition-interactive), background var(--transition-interactive);
+    }
+    .btn-primary {
+      background: var(--color-primary);
+      color: #071015;
+      box-shadow: var(--shadow-md);
+    }
+    .btn-primary:hover { transform: translateY(-2px); background: var(--color-primary-hover); }
+    .btn-secondary {
+      border: 1px solid var(--color-border);
+      background: rgba(255,255,255,0.02);
+      color: var(--color-text);
+    }
+    .btn-secondary:hover { transform: translateY(-2px); border-color: rgba(255,255,255,0.2); }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-4);
+    }
+    .metric {
+      padding: var(--space-5);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid var(--color-border);
+    }
+    .metric strong {
+      display: block;
+      font-size: var(--text-xl);
+      font-family: var(--font-display);
+      margin-bottom: var(--space-2);
+    }
+    .metric span { color: var(--color-text-muted); font-size: var(--text-sm); }
+
+    .hero-visual {
+      position: relative;
+      min-height: 520px;
+      border-radius: 32px;
+      padding: var(--space-6);
+      background:
+        linear-gradient(160deg, rgba(17, 24, 33, 0.92), rgba(12, 18, 26, 0.84)),
+        radial-gradient(circle at top right, rgba(86, 199, 178, 0.18), transparent 26%),
+        radial-gradient(circle at left bottom, rgba(128, 168, 255, 0.14), transparent 22%);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .hero-visual::after {
+      content: "";
+      position: absolute;
+      inset: auto -10% -30% 30%;
+      height: 280px;
+      background: radial-gradient(circle, rgba(86, 199, 178, 0.24), transparent 64%);
+      filter: blur(50px);
+      z-index: -1;
+    }
+    .visual-panel {
+      position: absolute;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(10px);
+      overflow: hidden;
+    }
+    .visual-panel.main {
+      inset: 8% 7% 18% 7%;
+      padding: var(--space-5);
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: var(--space-5);
+    }
+    .visual-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--color-text-muted);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    .dots { display: flex; gap: 0.4rem; }
+    .dots span { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.24); }
+    .visual-scene {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: var(--space-4);
+      align-items: stretch;
+    }
+    .product-stage {
+      position: relative;
+      border-radius: 22px;
+      background:
+        linear-gradient(180deg, rgba(86, 199, 178, 0.08), rgba(86, 199, 178, 0.02)),
+        linear-gradient(135deg, #182736, #0e171f);
+      border: 1px solid rgba(255,255,255,0.08);
+      min-height: 260px;
+      overflow: hidden;
+    }
+    .product-stage svg { width: 100%; height: 100%; }
+    .info-stack { display: grid; gap: var(--space-4); }
+    .mini-card {
+      padding: var(--space-4);
+      border-radius: 20px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .mini-card strong { display: block; margin-bottom: var(--space-2); font-size: var(--text-sm); }
+    .mini-card p,
+    .mini-card li { color: var(--color-text-muted); font-size: var(--text-xs); }
+    .mini-card ul { list-style: none; display: grid; gap: var(--space-2); }
+    .status-row { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+    .status-pill {
+      padding: 0.55rem 0.9rem;
+      border-radius: var(--radius-full);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--color-text-muted);
+      font-size: var(--text-xs);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .visual-panel.floating-top {
+      right: 5%;
+      top: 3%;
+      width: min(240px, 58%);
+      padding: var(--space-4);
+    }
+    .visual-panel.floating-bottom {
+      left: 4%;
+      bottom: 3%;
+      width: min(260px, 64%);
+      padding: var(--space-4);
+    }
+    .floating-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      margin-bottom: var(--space-3);
+      font-size: var(--text-sm);
+      font-weight: 600;
+    }
+    .progress {
+      height: 10px;
+      border-radius: var(--radius-full);
+      background: rgba(255,255,255,0.08);
+      overflow: hidden;
+      margin-bottom: var(--space-2);
+    }
+    .progress span {
+      display: block;
+      width: 78%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+      border-radius: inherit;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: var(--space-6);
+      margin-bottom: var(--space-10);
+    }
+    .section-head h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      letter-spacing: -0.04em;
+      max-width: 13ch;
+    }
+    .section-head p { max-width: 56ch; color: var(--color-text-muted); }
+
+    .services-grid {
+      display: grid;
+      gap: var(--space-4);
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+    .service-card {
+      padding: var(--space-6);
+      border-radius: 28px;
+      border: 1px solid var(--color-border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      box-shadow: var(--shadow-sm);
+      min-height: 240px;
+    }
+    .service-card:nth-child(1) { grid-column: span 5; }
+    .service-card:nth-child(2) { grid-column: span 4; }
+    .service-card:nth-child(3) { grid-column: span 3; }
+    .service-card:nth-child(4) { grid-column: span 7; }
+    .service-card:nth-child(5) { grid-column: span 5; }
+    .service-card .tag {
+      display: inline-flex;
+      padding: 0.45rem 0.8rem;
+      border-radius: var(--radius-full);
+      background: var(--color-primary-highlight);
+      color: var(--color-primary);
+      font-size: var(--text-xs);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: var(--space-4);
+    }
+    .service-card h3 { font-size: var(--text-lg); margin-bottom: var(--space-3); }
+    .service-card p { color: var(--color-text-muted); margin-bottom: var(--space-4); }
+    .service-card ul { list-style: none; display: grid; gap: var(--space-2); color: var(--color-text-muted); font-size: var(--text-sm); }
+    .service-card li::before { content: "•"; color: var(--color-primary); margin-right: 0.55rem; }
+
+    .about-grid,
+    .contact-grid,
+    .timeline-wrap {
+      display: grid;
+      gap: var(--space-4);
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+    .panel {
+      border-radius: 30px;
+      border: 1px solid var(--color-border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.02));
+      padding: var(--space-8);
+    }
+    .panel h3 {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      letter-spacing: -0.04em;
+      margin-bottom: var(--space-4);
+      max-width: 15ch;
+    }
+    .panel p { color: var(--color-text-muted); }
+    .panel ul {
+      list-style: none;
+      display: grid;
+      gap: var(--space-4);
+      margin-top: var(--space-6);
+      color: var(--color-text-muted);
+    }
+    .panel li strong {
+      display: block;
+      color: var(--color-text);
+      font-size: var(--text-sm);
+      margin-bottom: 0.2rem;
+    }
+    .about-primary { grid-column: span 7; }
+    .about-secondary { grid-column: span 5; }
+    .contact-panel { grid-column: span 5; }
+    .contact-info { grid-column: span 7; }
+
+    .timeline-card {
+      grid-column: span 4;
+      padding: var(--space-6);
+      border-radius: 26px;
+      border: 1px solid var(--color-border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    }
+    .timeline-card span {
+      display: inline-flex;
+      margin-bottom: var(--space-4);
+      color: var(--color-primary);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .timeline-card h3 { margin-bottom: var(--space-3); font-size: var(--text-lg); }
+    .timeline-card p { color: var(--color-text-muted); }
+
+    .cta-panel {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(var(--space-10), 6vw, var(--space-16));
+      border-radius: 34px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background:
+        linear-gradient(130deg, rgba(86,199,178,0.14), rgba(128,168,255,0.08) 45%, rgba(10,15,20,0.18)),
+        rgba(255,255,255,0.03);
+      display: block;
+    }
+    .cta-panel::before {
+      content: "";
+      position: absolute;
+      inset: auto -8% -40% auto;
+      width: 340px;
+      aspect-ratio: 1;
+      background: radial-gradient(circle, rgba(128,168,255,0.22), transparent 60%);
+      filter: blur(24px);
+    }
+    .cta-panel h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      letter-spacing: -0.04em;
+      max-width: 11ch;
+      margin-bottom: var(--space-4);
+    }
+    .cta-panel p { color: var(--color-text-muted); max-width: 58ch; }
+
+    .site-footer {
+      padding: var(--space-8) 0 var(--space-10);
+      color: var(--color-text-faint);
+      font-size: var(--text-sm);
+    }
+    .footer-shell {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      border-top: 1px solid var(--color-divider);
+      padding-top: var(--space-6);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 700ms ease, transform 700ms ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (min-width: 980px) {
+      .hero-grid { grid-template-columns: 1.05fr 0.95fr; }
+    }
+
+    @media (max-width: 1100px) {
+      .nav-links { display: none; }
+      .service-card:nth-child(n),
+      .about-primary,
+      .about-secondary,
+      .contact-panel,
+      .contact-info,
+      .timeline-card { grid-column: span 12; }
+    }
+
+    @media (max-width: 979px) {
+      .hero-copy h1 { max-width: 11ch; }
+      .metrics { grid-template-columns: 1fr; }
+      .hero-visual { min-height: 460px; }
+      .visual-scene { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 720px) {
+      .container { width: min(calc(100% - 1.25rem), var(--content-default)); }
+      .nav-shell { min-height: 72px; align-items: flex-start; padding: 0.75rem 0; }
+      .header-actions { width: 100%; justify-content: space-between; flex-wrap: wrap; }
+      .nav-cta { display: inline-flex; min-width: 100%; }
+      .language-switcher { width: 100%; justify-content: center; }
+      .hero { padding-top: var(--space-12); }
+      .hero-copy h1 { font-size: clamp(2.5rem, 15vw, 4.4rem); }
+      .section-head { display: grid; gap: var(--space-4); }
+      .hero-actions { flex-direction: column; }
+      .btn, .contact-us-btn { width: 100%; }
+      .hero-visual { min-height: 420px; padding: var(--space-4); border-radius: 24px; }
+      .visual-panel.main { inset: 5% 4% 18% 4%; }
+      .visual-panel.floating-top,
+      .visual-panel.floating-bottom { width: auto; max-width: none; }
+      .panel,
+      .service-card,
+      .timeline-card,
+      .cta-panel { border-radius: 22px; }
+      .panel,
+      .service-card,
+      .timeline-card { padding: var(--space-5); }
+      .footer-shell { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      * { animation: none !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#content">İçeriğe geç</a>
+
+  <header class="site-header" id="top">
+    <div class="container nav-shell">
+      <a href="#top" class="brand" aria-label="Bid Engineering ana sayfa">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M5 18V6h7.2c2.9 0 4.8 1.65 4.8 4.05 0 1.65-.9 2.9-2.4 3.45L18.8 18h-4.1l-3.55-4.05H8.6V18H5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="brand-wording">
+          Bid Engineering
+          <small data-i18n="brand_subtitle">Technical Trade & Growth</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#services" data-i18n="nav_services">Hizmetler</a>
+        <a href="#about" data-i18n="nav_about">Hakkımızda</a>
+        <a href="#process" data-i18n="nav_process">Süreç</a>
+        <a href="#contact" data-i18n="nav_contact">İletişim</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="language-switcher" aria-label="Language switcher">
+          <button class="lang-btn is-active" type="button" data-lang-switch="tr" aria-pressed="true">TR</button>
+          <button class="lang-btn" type="button" data-lang-switch="en" aria-pressed="false">EN</button>
+          <button class="lang-btn" type="button" data-lang-switch="de" aria-pressed="false">DE</button>
+        </div>
+        <a class="nav-cta" href="#contact" data-i18n="header_cta">İş Birliği Başlat</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow" data-i18n="hero_eyebrow">Teknik işler • ithalat & ihracat • Amazon ticareti</span>
+          <h1 data-i18n-html="hero_title">Teknik gücü <span>uluslararası ticarete</span> dönüştürüyoruz.</h1>
+          <p data-i18n="hero_text">Bid Engineering; teknik işler, ithalat ve ihracat süreçleri ile ilgilenen, aynı zamanda Amazon ticaretine yönelen bir firmadır. Hedefimiz; doğru ürünleri, doğru tedarik yapısını ve doğru ticari yaklaşımı bir araya getirerek güven veren, sürdürülebilir iş birlikleri kurmaktır.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact" data-i18n="header_cta">İş Birliği Başlat</a>
+            <a class="btn btn-secondary" href="#services" data-i18n="hero_secondary">Hizmet Alanlarımızı İnceleyin</a>
+          </div>
+          <div class="metrics" aria-label="Öne çıkan başlıklar">
+            <div class="metric">
+              <strong data-i18n="metric_1_title">Teknik Yetkinlik</strong>
+              <span data-i18n="metric_1_text">İşleri yalnızca ticari değil, teknik doğruluk perspektifiyle ele alıyoruz.</span>
+            </div>
+            <div class="metric">
+              <strong data-i18n="metric_2_title">Dış Ticaret Odağı</strong>
+              <span data-i18n="metric_2_text">İthalat ve ihracat tarafında düzenli, güvenilir ve ölçeklenebilir iş akışları kuruyoruz.</span>
+            </div>
+            <div class="metric">
+              <strong data-i18n="metric_3_title">Amazon Büyümesi</strong>
+              <span data-i18n="metric_3_text">Amazon ticaretine yönelik ürün ve operasyon hazırlığını planlı şekilde geliştiriyoruz.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-hidden="true">
+          <div class="visual-panel main">
+            <div class="visual-toolbar">
+              <div class="dots"><span></span><span></span><span></span></div>
+              <span>Bid Trade Overview</span>
+            </div>
+            <div class="visual-scene">
+              <div class="product-stage">
+                <svg viewBox="0 0 480 360" role="img" aria-label="Decorative product illustration">
+                  <defs>
+                    <linearGradient id="lampBody" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#6ce1cb" stop-opacity="0.9"/>
+                      <stop offset="100%" stop-color="#8caeff" stop-opacity="0.35"/>
+                    </linearGradient>
+                    <linearGradient id="baseGlow" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#c4fff2" stop-opacity="0.45"/>
+                      <stop offset="100%" stop-color="#6ce1cb" stop-opacity="0.08"/>
+                    </linearGradient>
+                  </defs>
+                  <ellipse cx="244" cy="286" rx="126" ry="28" fill="url(#baseGlow)"/>
+                  <path d="M160 245C160 193 198 146 252 146C306 146 344 193 344 245V255H160V245Z" fill="url(#lampBody)" opacity="0.92"/>
+                  <path d="M188 120C201 84 231 66 257 66C285 66 315 84 328 120L340 156H176L188 120Z" fill="#173241" stroke="rgba(255,255,255,0.25)"/>
+                  <rect x="228" y="70" width="24" height="44" rx="12" fill="#d7b46e" opacity="0.8"/>
+                  <rect x="236" y="42" width="8" height="30" rx="4" fill="#edf3f8" opacity="0.6"/>
+                  <rect x="216" y="255" width="72" height="24" rx="12" fill="#0d1620" stroke="rgba(255,255,255,0.14)"/>
+                  <circle cx="252" cy="224" r="54" fill="#c6fff0" opacity="0.12"/>
+                  <path d="M174 156H330" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+                  <path d="M206 283H298" stroke="rgba(255,255,255,0.14)" stroke-width="2" stroke-linecap="round"/>
+                  <circle cx="116" cy="92" r="8" fill="#6ce1cb" opacity="0.75"/>
+                  <circle cx="362" cy="90" r="6" fill="#8caeff" opacity="0.72"/>
+                  <circle cx="386" cy="242" r="10" fill="#d7b46e" opacity="0.6"/>
+                </svg>
+              </div>
+              <div class="info-stack">
+                <div class="mini-card">
+                  <strong data-i18n="mini_1_title">Odak Ürün Alanı</strong>
+                  <p data-i18n="mini_1_text">Ev yaşamına uyum sağlayan dekoratif ve teknolojik ürün grupları üzerinde çalışıyoruz.</p>
+                </div>
+                <div class="mini-card">
+                  <strong data-i18n="mini_2_title">İş Modeli</strong>
+                  <ul>
+                    <li data-i18n="mini_2_item_1">Tedarik değerlendirme</li>
+                    <li data-i18n="mini_2_item_2">Teknik uygunluk</li>
+                    <li data-i18n="mini_2_item_3">Pazar hazırlığı</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="status-row">
+              <span class="status-pill" data-i18n="status_1">Sourcing</span>
+              <span class="status-pill" data-i18n="status_2">Trade</span>
+              <span class="status-pill" data-i18n="status_3">Marketplace</span>
+            </div>
+          </div>
+
+          <div class="visual-panel floating-top">
+            <div class="floating-title">
+              <span data-i18n="floating_top_title">Operasyon Odağı</span>
+              <strong>2026</strong>
+            </div>
+            <div class="progress"><span></span></div>
+            <p style="color: var(--color-text-muted); font-size: var(--text-xs);" data-i18n="floating_top_text">Teknik işler, dış ticaret ve Amazon hazırlığı tek bir büyüme yapısında birleşiyor.</p>
+          </div>
+
+          <div class="visual-panel floating-bottom">
+            <div class="floating-title">
+              <span data-i18n="floating_bottom_title">Ana Başlıklar</span>
+            </div>
+            <div class="status-row">
+              <span class="status-pill" data-i18n="bottom_pill_1">Import</span>
+              <span class="status-pill" data-i18n="bottom_pill_2">Export</span>
+              <span class="status-pill" data-i18n="bottom_pill_3">Amazon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2 data-i18n="services_title">Faaliyet alanlarımızı açık ve profesyonel biçimde sunuyoruz.</h2>
+          </div>
+          <p data-i18n="services_text">Sayfanın bu bölümü; Bid Engineering'in yalnızca bir fikir değil, gerçek bir iş yapısı olduğunu gösterir. Teknik bakış açımız ile ticari hedeflerimizi aynı çatı altında anlatır.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <span class="tag" data-i18n="service_1_tag">01 • Teknik işler</span>
+            <h3 data-i18n="service_1_title">Teknik bakış açısıyla çözüm üretimi</h3>
+            <p data-i18n="service_1_text">İş süreçlerini yalnızca sonuç odaklı değil, doğruluk, sürdürülebilirlik ve profesyonellik temelinde ele alıyoruz.</p>
+            <ul>
+              <li data-i18n="service_1_item_1">İhtiyaç ve süreç değerlendirmesi</li>
+              <li data-i18n="service_1_item_2">Teknik uygunluk ve yapılandırma</li>
+              <li data-i18n="service_1_item_3">Düzenli ve güvenilir iş yaklaşımı</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="tag" data-i18n="service_2_tag">02 • İthalat ve ihracat</span>
+            <h3 data-i18n="service_2_title">Uluslararası ticaret için sağlam iş akışı</h3>
+            <p data-i18n="service_2_text">Doğru ürün, doğru tedarikçi ve doğru pazar arasında kalıcı bağ kurmayı hedefliyoruz.</p>
+            <ul>
+              <li data-i18n="service_2_item_1">Tedarikçi ve ürün değerlendirme</li>
+              <li data-i18n="service_2_item_2">Ticari konumlandırma yaklaşımı</li>
+              <li data-i18n="service_2_item_3">Uzun vadeli iş birliği altyapısı</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="tag" data-i18n="service_3_tag">03 • Ürün odağı</span>
+            <h3 data-i18n="service_3_title">Dekoratif ve teknolojik ürünler</h3>
+            <p data-i18n="service_3_text">Modern yaşam alanlarında hem estetik hem işlev sunan ürün kategorilerine yöneliyoruz.</p>
+            <ul>
+              <li data-i18n="service_3_item_1">Ev dekorasyonu ile uyumlu ürünler</li>
+              <li data-i18n="service_3_item_2">Kullanım değeri yüksek çözümler</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="tag" data-i18n="service_4_tag">04 • Amazon ticareti</span>
+            <h3 data-i18n="service_4_title">Amazon odaklı ticari büyüme hazırlığı</h3>
+            <p data-i18n="service_4_text">Amazon tarafında ürün seçimi, sunum dili ve operasyon hazırlığını sistemli biçimde geliştiriyoruz.</p>
+            <ul>
+              <li data-i18n="service_4_item_1">Amazon için uygun ürün seçkisi</li>
+              <li data-i18n="service_4_item_2">Listeleme ve marka anlatımı hazırlığı</li>
+              <li data-i18n="service_4_item_3">Ölçeklenebilir satış yaklaşımı</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="tag" data-i18n="service_5_tag">05 • Profesyonel iş birliği</span>
+            <h3 data-i18n="service_5_title">İhtiyaç duyan paydaşlar için güven veren yapı</h3>
+            <p data-i18n="service_5_text">Firmamız; tedarikçiler, iş ortakları ve yeni ticari bağlantılar için ciddi, profesyonel ve çözüm odaklı bir muhatap olduğunu net biçimde gösterir.</p>
+            <ul>
+              <li data-i18n="service_5_item_1">Kurumsal ve net iletişim dili</li>
+              <li data-i18n="service_5_item_2">Uzun vadeli iş ilişkilerine uygun yaklaşım</li>
+              <li data-i18n="service_5_item_3">Güven oluşturan sade kurumsal görünüm</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2 data-i18n="about_title">Mini kurumsal yapıda net mesaj, net konumlandırma.</h2>
+          </div>
+          <p data-i18n="about_text">Bu alan; şirketin kim olduğunu, nasıl çalıştığını ve hangi ticari yönelimlere sahip olduğunu kısa ama güçlü bir dille anlatır.</p>
+        </div>
+
+        <div class="about-grid">
+          <article class="panel about-primary reveal">
+            <span class="eyebrow" data-i18n="about_panel_tag">Bid Engineering</span>
+            <h3 data-i18n="about_panel_title">Teknik yetkinlik ile ticari disiplini bir araya getiriyoruz.</h3>
+            <p data-i18n="about_panel_text">Bid Engineering, teknik işler ile dış ticaret süreçlerini bir arada yürüten bir firmadır. İş modelimiz; doğru analiz, güvenilir süreç yönetimi ve sürdürülebilir ticari büyüme üzerine kuruludur. Aynı zamanda Amazon ticaretine yönelerek ürün odaklı yeni fırsat alanları oluşturmayı hedefliyoruz.</p>
+          </article>
+
+          <article class="panel about-secondary reveal">
+            <span class="eyebrow" data-i18n="about_panel_2_tag">Çalışma yaklaşımı</span>
+            <ul>
+              <li>
+                <strong data-i18n="about_list_1_title">Doğru değerlendirme</strong>
+                <span data-i18n="about_list_1_text">İş ve ürün fırsatlarını teknik ve ticari açıdan birlikte inceliyoruz.</span>
+              </li>
+              <li>
+                <strong data-i18n="about_list_2_title">Güvenilir iletişim</strong>
+                <span data-i18n="about_list_2_text">İş ortaklarıyla sade, açık ve profesyonel bir iletişim dili kuruyoruz.</span>
+              </li>
+              <li>
+                <strong data-i18n="about_list_3_title">Büyümeye uygun yapı</strong>
+                <span data-i18n="about_list_3_text">Bugünkü işlerimizi, yarının ticari genişlemesine uygun şekilde planlıyoruz.</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2 data-i18n="process_title">İlerleme yaklaşımımız düzenli, kontrollü ve ticari sonuç odaklıdır.</h2>
+          </div>
+          <p data-i18n="process_text">Aşağıdaki yapı, ürün ve ticaret tarafında nasıl ilerlediğimizi kısa biçimde gösterir. Böylece ziyaretçiler yalnızca ne yaptığımızı değil, nasıl çalıştığımızı da görür.</p>
+        </div>
+
+        <div class="timeline-wrap">
+          <article class="timeline-card reveal">
+            <span data-i18n="step_1_tag">Adım 01</span>
+            <h3 data-i18n="step_1_title">Değerlendirme</h3>
+            <p data-i18n="step_1_text">Ürün, tedarik veya iş fırsatını teknik ve ticari açılardan birlikte değerlendiririz.</p>
+          </article>
+          <article class="timeline-card reveal">
+            <span data-i18n="step_2_tag">Adım 02</span>
+            <h3 data-i18n="step_2_title">Planlama</h3>
+            <p data-i18n="step_2_text">Uygun yapı belirlendikten sonra süreç, iletişim ve ticari yön netleştirilir.</p>
+          </article>
+          <article class="timeline-card reveal">
+            <span data-i18n="step_3_tag">Adım 03</span>
+            <h3 data-i18n="step_3_title">Uygulama ve büyüme</h3>
+            <p data-i18n="step_3_text">Operasyonlar devreye alınır, yeni ticari kanallar değerlendirilir ve büyüme alanları geliştirilir.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2 data-i18n="contact_section_title">İletişim ve iş birliği için doğrudan bize ulaşın.</h2>
+          </div>
+          <p data-i18n="contact_section_text">İletişim alanı sade tutuldu; böylece ziyaretçiler firma bilgilerine ve aksiyona hızlı şekilde ulaşabilir.</p>
+        </div>
+
+        <div class="contact-grid">
+          <article class="panel contact-info reveal">
+            <span class="eyebrow" data-i18n="contact_tag">İletişim Bilgileri</span>
+            <h3 data-i18n="contact_title">Bid Engineering ile bağlantı kurun.</h3>
+            <ul>
+              <li>
+                <strong data-i18n="address_label">Adres</strong>
+                Hoşdere Cad. Fuar Sok. 6/4
+              </li>
+              <li>
+                <strong data-i18n="email_label">E-posta</strong>
+                <a href="mailto:info@bid.biz.tr">info@bid.biz.tr</a>
+              </li>
+              <li>
+                <strong data-i18n="phone_label">Telefon</strong>
+                <a href="tel:+903129999999">+90 312 999 99 99</a>
+              </li>
+            </ul>
+          </article>
+
+          <article class="panel contact-panel reveal">
+            <span class="eyebrow" data-i18n="contact_cta_tag">İş Birliği</span>
+            <h3 data-i18n="contact_cta_title">Yeni bir görüşme başlatmak için hazırız.</h3>
+            <p data-i18n="contact_cta_text">Contact Us butonu şimdilik yer tutucu olarak bırakıldı. Daha sonra bu bağlantıyı Google Forms sayfanıza yönlendirebilirsiniz.</p>
+            <a class="contact-us-btn" href="#" data-contact-placeholder="true" data-i18n="contact_button">Contact Us</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta-panel reveal">
+          <div>
+            <h2 data-i18n="cta_title">Kurumsal duruşu koruyan, yayınlamaya hazır bir başlangıç sayfası.</h2>
+            <p data-i18n="cta_text">Bu sayfa tek dosyalı yapısını korur; GitHub Pages üzerinde kolayca yayınlanabilir. İleride iletişim formu, ürün alt sayfaları veya detaylı kurumsal bölümler eklenmek istendiğinde aynı tasarım çizgisi devam ettirilebilir.</p>
+            <div class="hero-actions" style="margin-top: var(--space-6); margin-bottom: 0;">
+              <a class="btn btn-primary" href="#contact" data-i18n="header_cta">İş Birliği Başlat</a>
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-shell">
+      <p data-i18n="footer_left">Bid Engineering için hazırlanmış mini kurumsal landing page.</p>
+      <p data-i18n="footer_right">Responsive • Static HTML • GitHub Pages uyumlu</p>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      tr: {
+        brand_subtitle: 'Technical Trade & Growth',
+        nav_services: 'Hizmetler', nav_about: 'Hakkımızda', nav_process: 'Süreç', nav_contact: 'İletişim',
+        header_cta: 'İş Birliği Başlat',
+        hero_eyebrow: 'Teknik işler • ithalat & ihracat • Amazon ticareti',
+        hero_title: 'Teknik gücü <span>uluslararası ticarete</span> dönüştürüyoruz.',
+        hero_text: 'Bid Engineering; teknik işler, ithalat ve ihracat süreçleri ile ilgilenen, aynı zamanda Amazon ticaretine yönelen bir firmadır. Hedefimiz; doğru ürünleri, doğru tedarik yapısını ve doğru ticari yaklaşımı bir araya getirerek güven veren, sürdürülebilir iş birlikleri kurmaktır.',
+        hero_secondary: 'Hizmet Alanlarımızı İnceleyin',
+        metric_1_title: 'Teknik Yetkinlik', metric_1_text: 'İşleri yalnızca ticari değil, teknik doğruluk perspektifiyle ele alıyoruz.',
+        metric_2_title: 'Dış Ticaret Odağı', metric_2_text: 'İthalat ve ihracat tarafında düzenli, güvenilir ve ölçeklenebilir iş akışları kuruyoruz.',
+        metric_3_title: 'Amazon Büyümesi', metric_3_text: 'Amazon ticaretine yönelik ürün ve operasyon hazırlığını planlı şekilde geliştiriyoruz.',
+        mini_1_title: 'Odak Ürün Alanı', mini_1_text: 'Ev yaşamına uyum sağlayan dekoratif ve teknolojik ürün grupları üzerinde çalışıyoruz.',
+        mini_2_title: 'İş Modeli', mini_2_item_1: 'Tedarik değerlendirme', mini_2_item_2: 'Teknik uygunluk', mini_2_item_3: 'Pazar hazırlığı',
+        status_1: 'Sourcing', status_2: 'Trade', status_3: 'Marketplace',
+        floating_top_title: 'Operasyon Odağı', floating_top_text: 'Teknik işler, dış ticaret ve Amazon hazırlığı tek bir büyüme yapısında birleşiyor.',
+        floating_bottom_title: 'Ana Başlıklar', bottom_pill_1: 'Import', bottom_pill_2: 'Export', bottom_pill_3: 'Amazon',
+        services_title: 'Faaliyet alanlarımızı açık ve profesyonel biçimde sunuyoruz.',
+        services_text: 'Sayfanın bu bölümü; Bid Engineering\'in yalnızca bir fikir değil, gerçek bir iş yapısı olduğunu gösterir. Teknik bakış açımız ile ticari hedeflerimizi aynı çatı altında anlatır.',
+        service_1_tag: '01 • Teknik işler', service_1_title: 'Teknik bakış açısıyla çözüm üretimi', service_1_text: 'İş süreçlerini yalnızca sonuç odaklı değil, doğruluk, sürdürülebilirlik ve profesyonellik temelinde ele alıyoruz.', service_1_item_1: 'İhtiyaç ve süreç değerlendirmesi', service_1_item_2: 'Teknik uygunluk ve yapılandırma', service_1_item_3: 'Düzenli ve güvenilir iş yaklaşımı',
+        service_2_tag: '02 • İthalat ve ihracat', service_2_title: 'Uluslararası ticaret için sağlam iş akışı', service_2_text: 'Doğru ürün, doğru tedarikçi ve doğru pazar arasında kalıcı bağ kurmayı hedefliyoruz.', service_2_item_1: 'Tedarikçi ve ürün değerlendirme', service_2_item_2: 'Ticari konumlandırma yaklaşımı', service_2_item_3: 'Uzun vadeli iş birliği altyapısı',
+        service_3_tag: '03 • Ürün odağı', service_3_title: 'Dekoratif ve teknolojik ürünler', service_3_text: 'Modern yaşam alanlarında hem estetik hem işlev sunan ürün kategorilerine yöneliyoruz.', service_3_item_1: 'Ev dekorasyonu ile uyumlu ürünler', service_3_item_2: 'Kullanım değeri yüksek çözümler',
+        service_4_tag: '04 • Amazon ticareti', service_4_title: 'Amazon odaklı ticari büyüme hazırlığı', service_4_text: 'Amazon tarafında ürün seçimi, sunum dili ve operasyon hazırlığını sistemli biçimde geliştiriyoruz.', service_4_item_1: 'Amazon için uygun ürün seçkisi', service_4_item_2: 'Listeleme ve marka anlatımı hazırlığı', service_4_item_3: 'Ölçeklenebilir satış yaklaşımı',
+        service_5_tag: '05 • Profesyonel iş birliği', service_5_title: 'İhtiyaç duyan paydaşlar için güven veren yapı', service_5_text: 'Firmamız; tedarikçiler, iş ortakları ve yeni ticari bağlantılar için ciddi, profesyonel ve çözüm odaklı bir muhatap olduğunu net biçimde gösterir.', service_5_item_1: 'Kurumsal ve net iletişim dili', service_5_item_2: 'Uzun vadeli iş ilişkilerine uygun yaklaşım', service_5_item_3: 'Güven oluşturan sade kurumsal görünüm',
+        about_title: 'Mini kurumsal yapıda net mesaj, net konumlandırma.', about_text: 'Bu alan; şirketin kim olduğunu, nasıl çalıştığını ve hangi ticari yönelimlere sahip olduğunu kısa ama güçlü bir dille anlatır.',
+        about_panel_tag: 'Bid Engineering', about_panel_title: 'Teknik yetkinlik ile ticari disiplini bir araya getiriyoruz.', about_panel_text: 'Bid Engineering, teknik işler ile dış ticaret süreçlerini bir arada yürüten bir firmadır. İş modelimiz; doğru analiz, güvenilir süreç yönetimi ve sürdürülebilir ticari büyüme üzerine kuruludur. Aynı zamanda Amazon ticaretine yönelerek ürün odaklı yeni fırsat alanları oluşturmayı hedefliyoruz.',
+        about_panel_2_tag: 'Çalışma yaklaşımı', about_list_1_title: 'Doğru değerlendirme', about_list_1_text: 'İş ve ürün fırsatlarını teknik ve ticari açıdan birlikte inceliyoruz.', about_list_2_title: 'Güvenilir iletişim', about_list_2_text: 'İş ortaklarıyla sade, açık ve profesyonel bir iletişim dili kuruyoruz.', about_list_3_title: 'Büyümeye uygun yapı', about_list_3_text: 'Bugünkü işlerimizi, yarının ticari genişlemesine uygun şekilde planlıyoruz.',
+        process_title: 'İlerleme yaklaşımımız düzenli, kontrollü ve ticari sonuç odaklıdır.', process_text: 'Aşağıdaki yapı, ürün ve ticaret tarafında nasıl ilerlediğimizi kısa biçimde gösterir. Böylece ziyaretçiler yalnızca ne yaptığımızı değil, nasıl çalıştığımızı da görür.', step_1_tag: 'Adım 01', step_1_title: 'Değerlendirme', step_1_text: 'Ürün, tedarik veya iş fırsatını teknik ve ticari açılardan birlikte değerlendiririz.', step_2_tag: 'Adım 02', step_2_title: 'Planlama', step_2_text: 'Uygun yapı belirlendikten sonra süreç, iletişim ve ticari yön netleştirilir.', step_3_tag: 'Adım 03', step_3_title: 'Uygulama ve büyüme', step_3_text: 'Operasyonlar devreye alınır, yeni ticari kanallar değerlendirilir ve büyüme alanları geliştirilir.',
+        contact_section_title: 'İletişim ve iş birliği için doğrudan bize ulaşın.', contact_section_text: 'İletişim alanı sade tutuldu; böylece ziyaretçiler firma bilgilerine ve aksiyona hızlı şekilde ulaşabilir.', contact_tag: 'İletişim Bilgileri', contact_title: 'Bid Engineering ile bağlantı kurun.', address_label: 'Adres', email_label: 'E-posta', phone_label: 'Telefon', contact_cta_tag: 'İş Birliği', contact_cta_title: 'Yeni bir görüşme başlatmak için hazırız.', contact_cta_text: 'Contact Us butonu şimdilik yer tutucu olarak bırakıldı. Daha sonra bu bağlantıyı Google Forms sayfanıza yönlendirebilirsiniz.', contact_button: 'Contact Us',
+        cta_title: 'Kurumsal duruşu koruyan, yayınlamaya hazır bir başlangıç sayfası.', cta_text: 'Bu sayfa tek dosyalı yapısını korur; GitHub Pages üzerinde kolayca yayınlanabilir. İleride iletişim formu, ürün alt sayfaları veya detaylı kurumsal bölümler eklenmek istendiğinde aynı tasarım çizgisi devam ettirilebilir.',         footer_left: 'Bid Engineering için hazırlanmış mini kurumsal landing page.', footer_right: 'Responsive • Static HTML • GitHub Pages uyumlu'
+      },
+      en: {
+        brand_subtitle: 'Technical Trade & Growth',
+        nav_services: 'Services', nav_about: 'About', nav_process: 'Process', nav_contact: 'Contact',
+        header_cta: 'Start a Partnership',
+        hero_eyebrow: 'Technical operations • import & export • Amazon commerce',
+        hero_title: 'We transform technical capability into <span>international trade.</span>',
+        hero_text: 'Bid Engineering is a company focused on technical operations, import and export activities, while also expanding toward Amazon commerce. Our goal is to bring together the right products, the right sourcing structure, and the right commercial approach to build reliable and sustainable business relationships.',
+        hero_secondary: 'Explore Our Services',
+        metric_1_title: 'Technical Capability', metric_1_text: 'We approach opportunities not only commercially, but also with technical accuracy and discipline.',
+        metric_2_title: 'Foreign Trade Focus', metric_2_text: 'We build reliable and scalable workflows for import and export operations.',
+        metric_3_title: 'Amazon Growth', metric_3_text: 'We are developing product and operational readiness for Amazon commerce in a structured way.',
+        mini_1_title: 'Product Direction', mini_1_text: 'We focus on decorative and technology-based product groups that fit modern living spaces.',
+        mini_2_title: 'Business Model', mini_2_item_1: 'Supplier evaluation', mini_2_item_2: 'Technical suitability', mini_2_item_3: 'Market readiness',
+        status_1: 'Sourcing', status_2: 'Trade', status_3: 'Marketplace',
+        floating_top_title: 'Operational Focus', floating_top_text: 'Technical operations, foreign trade, and Amazon preparation come together in one growth structure.',
+        floating_bottom_title: 'Core Areas', bottom_pill_1: 'Import', bottom_pill_2: 'Export', bottom_pill_3: 'Amazon',
+        services_title: 'We present our business activities in a clear and professional way.',
+        services_text: 'This section shows that Bid Engineering is not just an idea, but a real operating structure. It brings our technical perspective and commercial direction together under one corporate message.',
+        service_1_tag: '01 • Technical operations', service_1_title: 'Solution delivery with technical perspective', service_1_text: 'We handle business processes not only with a results focus, but with accuracy, sustainability, and professionalism.', service_1_item_1: 'Needs and process evaluation', service_1_item_2: 'Technical suitability and structuring', service_1_item_3: 'Reliable and consistent execution',
+        service_2_tag: '02 • Import and export', service_2_title: 'A solid workflow for international trade', service_2_text: 'We aim to build lasting links between the right products, the right suppliers, and the right markets.', service_2_item_1: 'Supplier and product evaluation', service_2_item_2: 'Commercial positioning approach', service_2_item_3: 'Long-term partnership foundation',
+        service_3_tag: '03 • Product focus', service_3_title: 'Decorative and technology-led products', service_3_text: 'We are moving toward categories that combine aesthetic value with practical function in modern living spaces.', service_3_item_1: 'Products aligned with home decoration', service_3_item_2: 'Solutions with clear user value',
+        service_4_tag: '04 • Amazon commerce', service_4_title: 'Amazon-focused commercial growth preparation', service_4_text: 'We are developing product selection, presentation language, and operational readiness for Amazon in a structured manner.', service_4_item_1: 'Amazon-suitable product selection', service_4_item_2: 'Listing and brand content preparation', service_4_item_3: 'Scalable sales approach',
+        service_5_tag: '05 • Professional collaboration', service_5_title: 'A structure that builds confidence for stakeholders', service_5_text: 'Our company presents itself as a serious, professional, and solution-oriented business partner for suppliers, partners, and new commercial connections.', service_5_item_1: 'Clear and corporate communication', service_5_item_2: 'Approach suitable for long-term relationships', service_5_item_3: 'A clean corporate presence that builds trust',
+        about_title: 'Clear messaging and clear positioning in a compact corporate structure.', about_text: 'This area explains who the company is, how it works, and where its commercial direction is heading in a short but strong format.',
+        about_panel_tag: 'Bid Engineering', about_panel_title: 'We combine technical capability with commercial discipline.', about_panel_text: 'Bid Engineering is a company that operates across technical work and foreign trade processes together. Our model is built on accurate assessment, reliable process management, and sustainable commercial growth. At the same time, we are moving toward Amazon commerce to create new product-driven opportunities.',
+        about_panel_2_tag: 'Working approach', about_list_1_title: 'Accurate evaluation', about_list_1_text: 'We assess business and product opportunities from both technical and commercial perspectives.', about_list_2_title: 'Reliable communication', about_list_2_text: 'We build simple, clear, and professional communication with our business partners.', about_list_3_title: 'Growth-ready structure', about_list_3_text: 'We plan today\'s activities in a way that supports tomorrow\'s commercial expansion.',
+        process_title: 'Our progress model is structured, controlled, and commercially focused.', process_text: 'The framework below briefly explains how we move forward in product and trade activities. It helps visitors understand not only what we do, but also how we work.', step_1_tag: 'Step 01', step_1_title: 'Evaluation', step_1_text: 'We evaluate the product, sourcing, or business opportunity from both technical and commercial angles.', step_2_tag: 'Step 02', step_2_title: 'Planning', step_2_text: 'Once the right structure is defined, the process, communication flow, and business direction are clarified.', step_3_tag: 'Step 03', step_3_title: 'Execution and growth', step_3_text: 'Operations are activated, new sales channels are assessed, and growth areas are developed.',
+        contact_section_title: 'Contact us directly for communication and cooperation.', contact_section_text: 'The contact section is intentionally simple so visitors can reach company details and the next action quickly.', contact_tag: 'Contact Details', contact_title: 'Connect with Bid Engineering.', address_label: 'Address', email_label: 'Email', phone_label: 'Phone', contact_cta_tag: 'Partnership', contact_cta_title: 'We are ready to start a new conversation.', contact_cta_text: 'The Contact Us button is currently a placeholder. You can later connect it to your Google Forms page.', contact_button: 'Contact Us',
+        cta_title: 'A launch-ready first page with a professional corporate tone.', cta_text: 'This page remains a single-file structure and can be published easily on GitHub Pages. If a contact form, product subpages, or more detailed corporate sections are needed later, the same design direction can be extended further.',         footer_left: 'Mini corporate landing page prepared for Bid Engineering.', footer_right: 'Responsive • Static HTML • GitHub Pages ready'
+      },
+      de: {
+        brand_subtitle: 'Technical Trade & Growth',
+        nav_services: 'Leistungen', nav_about: 'Über uns', nav_process: 'Prozess', nav_contact: 'Kontakt',
+        header_cta: 'Zusammenarbeit starten',
+        hero_eyebrow: 'Technische Abläufe • Import & Export • Amazon-Handel',
+        hero_title: 'Wir verwandeln technische Kompetenz in <span>internationalen Handel.</span>',
+        hero_text: 'Bid Engineering ist ein Unternehmen mit Fokus auf technische Abläufe, Import- und Exportgeschäfte sowie den Ausbau in Richtung Amazon-Handel. Unser Ziel ist es, die richtigen Produkte, die richtige Beschaffungsstruktur und den richtigen geschäftlichen Ansatz zusammenzubringen, um verlässliche und nachhaltige Geschäftsbeziehungen aufzubauen.',
+        hero_secondary: 'Unsere Leistungen ansehen',
+        metric_1_title: 'Technische Kompetenz', metric_1_text: 'Wir betrachten Chancen nicht nur geschäftlich, sondern auch mit technischer Genauigkeit und Disziplin.',
+        metric_2_title: 'Außenhandelsfokus', metric_2_text: 'Wir schaffen verlässliche und skalierbare Abläufe für Import- und Exportprozesse.',
+        metric_3_title: 'Amazon-Wachstum', metric_3_text: 'Wir entwickeln Produkt- und Betriebsbereitschaft für den Amazon-Handel auf strukturierte Weise.',
+        mini_1_title: 'Produktausrichtung', mini_1_text: 'Wir konzentrieren uns auf dekorative und technologieorientierte Produktgruppen für moderne Wohnräume.',
+        mini_2_title: 'Geschäftsmodell', mini_2_item_1: 'Lieferantenbewertung', mini_2_item_2: 'Technische Eignung', mini_2_item_3: 'Marktvorbereitung',
+        status_1: 'Beschaffung', status_2: 'Handel', status_3: 'Marketplace',
+        floating_top_title: 'Operativer Fokus', floating_top_text: 'Technische Abläufe, Außenhandel und Amazon-Vorbereitung bilden eine gemeinsame Wachstumsstruktur.',
+        floating_bottom_title: 'Kernbereiche', bottom_pill_1: 'Import', bottom_pill_2: 'Export', bottom_pill_3: 'Amazon',
+        services_title: 'Wir präsentieren unsere Tätigkeitsfelder klar und professionell.',
+        services_text: 'Dieser Bereich zeigt, dass Bid Engineering nicht nur eine Idee ist, sondern eine reale betriebliche Struktur. Er verbindet unsere technische Perspektive mit unserer geschäftlichen Ausrichtung in einer klaren Unternehmensbotschaft.',
+        service_1_tag: '01 • Technische Abläufe', service_1_title: 'Lösungsumsetzung mit technischer Perspektive', service_1_text: 'Wir behandeln Prozesse nicht nur ergebnisorientiert, sondern auf Grundlage von Genauigkeit, Nachhaltigkeit und Professionalität.', service_1_item_1: 'Bedarfs- und Prozessbewertung', service_1_item_2: 'Technische Eignung und Strukturierung', service_1_item_3: 'Verlässliche und konstante Umsetzung',
+        service_2_tag: '02 • Import und Export', service_2_title: 'Ein solider Ablauf für internationalen Handel', service_2_text: 'Wir wollen dauerhafte Verbindungen zwischen den richtigen Produkten, den richtigen Lieferanten und den richtigen Märkten schaffen.', service_2_item_1: 'Lieferanten- und Produktbewertung', service_2_item_2: 'Kommerzieller Positionierungsansatz', service_2_item_3: 'Grundlage für langfristige Partnerschaften',
+        service_3_tag: '03 • Produktfokus', service_3_title: 'Dekorative und technologieorientierte Produkte', service_3_text: 'Wir konzentrieren uns auf Kategorien, die ästhetischen Wert und praktische Funktion in modernen Wohnräumen verbinden.', service_3_item_1: 'Produkte passend zur Wohnästhetik', service_3_item_2: 'Lösungen mit klarem Nutzwert',
+        service_4_tag: '04 • Amazon-Handel', service_4_title: 'Amazon-orientierte Vorbereitung auf kommerzielles Wachstum', service_4_text: 'Wir entwickeln Produktauswahl, Präsentationssprache und operative Vorbereitung für Amazon systematisch weiter.', service_4_item_1: 'Produktauswahl für Amazon', service_4_item_2: 'Vorbereitung von Listings und Markeninhalten', service_4_item_3: 'Skalierbarer Vertriebsansatz',
+        service_5_tag: '05 • Professionelle Zusammenarbeit', service_5_title: 'Eine Struktur, die Vertrauen bei Stakeholdern schafft', service_5_text: 'Unser Unternehmen präsentiert sich für Lieferanten, Partner und neue geschäftliche Kontakte als ernsthafter, professioneller und lösungsorientierter Ansprechpartner.', service_5_item_1: 'Klare und unternehmerische Kommunikation', service_5_item_2: 'Geeignet für langfristige Geschäftsbeziehungen', service_5_item_3: 'Reduzierter Auftritt mit vertrauensbildender Wirkung',
+        about_title: 'Klare Botschaft und klare Positionierung in einer kompakten Unternehmensstruktur.', about_text: 'Dieser Bereich erklärt in kurzer, aber starker Form, wer das Unternehmen ist, wie es arbeitet und wohin seine geschäftliche Ausrichtung geht.',
+        about_panel_tag: 'Bid Engineering', about_panel_title: 'Wir verbinden technische Kompetenz mit geschäftlicher Disziplin.', about_panel_text: 'Bid Engineering ist ein Unternehmen, das technische Arbeit und Außenhandelsprozesse gemeinsam führt. Unser Modell basiert auf präziser Bewertung, verlässlichem Prozessmanagement und nachhaltigem geschäftlichem Wachstum. Gleichzeitig entwickeln wir uns in Richtung Amazon-Handel, um neue produktorientierte Chancen zu schaffen.',
+        about_panel_2_tag: 'Arbeitsweise', about_list_1_title: 'Präzise Bewertung', about_list_1_text: 'Wir bewerten Geschäfts- und Produktchancen aus technischer und kommerzieller Sicht zugleich.', about_list_2_title: 'Verlässliche Kommunikation', about_list_2_text: 'Mit unseren Geschäftspartnern pflegen wir eine klare, einfache und professionelle Kommunikation.', about_list_3_title: 'Wachstumsfähige Struktur', about_list_3_text: 'Wir planen die heutigen Aktivitäten so, dass sie die geschäftliche Expansion von morgen unterstützen.',
+        process_title: 'Unser Vorgehen ist strukturiert, kontrolliert und auf geschäftliche Ergebnisse ausgerichtet.', process_text: 'Die folgende Struktur zeigt kurz, wie wir bei Produkt- und Handelsaktivitäten vorgehen. So erkennen Besucher nicht nur, was wir tun, sondern auch, wie wir arbeiten.', step_1_tag: 'Schritt 01', step_1_title: 'Bewertung', step_1_text: 'Wir bewerten Produkt-, Beschaffungs- oder Geschäftschancen aus technischer und kommerzieller Perspektive.', step_2_tag: 'Schritt 02', step_2_title: 'Planung', step_2_text: 'Sobald die passende Struktur feststeht, werden Prozess, Kommunikation und geschäftliche Richtung geklärt.', step_3_tag: 'Schritt 03', step_3_title: 'Umsetzung und Wachstum', step_3_text: 'Abläufe werden aktiviert, neue Vertriebskanäle geprüft und Wachstumsfelder entwickelt.',
+        contact_section_title: 'Kontaktieren Sie uns direkt für Kommunikation und Zusammenarbeit.', contact_section_text: 'Der Kontaktbereich ist bewusst einfach gehalten, damit Besucher schnell zu den Firmendaten und zur nächsten Aktion gelangen.', contact_tag: 'Kontaktdaten', contact_title: 'Nehmen Sie Kontakt mit Bid Engineering auf.', address_label: 'Adresse', email_label: 'E-Mail', phone_label: 'Telefon', contact_cta_tag: 'Zusammenarbeit', contact_cta_title: 'Wir sind bereit für ein neues Gespräch.', contact_cta_text: 'Der Contact-Us-Button ist derzeit als Platzhalter angelegt. Später können Sie ihn mit Ihrer Google-Forms-Seite verknüpfen.', contact_button: 'Contact Us',
+        cta_title: 'Eine veröffentlichungsbereite Startseite mit professionellem Unternehmensauftritt.', cta_text: 'Diese Seite bleibt eine einzelne Datei und kann einfach über GitHub Pages veröffentlicht werden. Wenn später ein Kontaktformular, Produktunterseiten oder detailliertere Unternehmensbereiche benötigt werden, kann dieselbe Designlinie weiter ausgebaut werden.',         footer_left: 'Mini-Unternehmens-Landingpage für Bid Engineering.', footer_right: 'Responsive • Statisches HTML • GitHub-Pages-kompatibel'
+      }
+    };
+
+    const html = document.documentElement;
+    const buttons = document.querySelectorAll('[data-lang-switch]');
+    const textNodes = document.querySelectorAll('[data-i18n]');
+    const htmlNodes = document.querySelectorAll('[data-i18n-html]');
+    const header = document.querySelector('.site-header');
+    const reveals = document.querySelectorAll('.reveal');
+    const placeholderLinks = document.querySelectorAll('[data-contact-placeholder="true"]');
+
+    function setLanguage(lang) {
+      html.setAttribute('data-lang', lang);
+      html.setAttribute('lang', lang);
+      buttons.forEach((btn) => {
+        const active = btn.dataset.langSwitch === lang;
+        btn.classList.toggle('is-active', active);
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      textNodes.forEach((node) => {
+        const key = node.dataset.i18n;
+        if (translations[lang] && translations[lang][key]) node.textContent = translations[lang][key];
+      });
+      htmlNodes.forEach((node) => {
+        const key = node.dataset.i18nHtml;
+        if (translations[lang] && translations[lang][key]) node.innerHTML = translations[lang][key];
+      });
+    }
+
+    buttons.forEach((btn) => btn.addEventListener('click', () => setLanguage(btn.dataset.langSwitch)));
+
+    placeholderLinks.forEach((link) => {
+      link.addEventListener('click', (event) => {
+        if (link.getAttribute('href') === '#') event.preventDefault();
+      });
+    });
+
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 16);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.16 });
+      reveals.forEach((el) => observer.observe(el));
+    } else {
+      reveals.forEach((el) => el.classList.add('visible'));
+    }
+
+    setLanguage('tr');
+  </script>
+</body>
+</html>
